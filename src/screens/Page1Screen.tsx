@@ -19,7 +19,13 @@ export const Page1Screen = ({navigation}: Props) => {
         onPress={() => navigation.navigate('PersonScreen')}
       /> */}
 
-      <Text>Navigate with arguments</Text>
+      <Text
+        style={{
+          marginVertical: 20,
+          fontSize: 20,
+        }}>
+        Navigate with arguments
+      </Text>
 
       <View style={{flexDirection: 'row'}}>
         <TouchableOpacity
