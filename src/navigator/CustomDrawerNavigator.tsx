@@ -15,9 +15,11 @@ import {
   View,
 } from 'react-native';
 import {styles} from '../theme/appTheme';
+import {BottomTabsNavigator} from './BottomTabsNavigator';
 
 export type RootDrawerParams = {
   StackNavigator: undefined;
+  BottomTabsNavigator: undefined;
   SettingsScreen: undefined;
 };
 
@@ -35,6 +37,10 @@ export const CustomDrawerNavigator = () => {
       }}
       drawerContent={props => <DrawerContent {...props} />}>
       <Drawer.Screen name="StackNavigator" component={StackNavigator} />
+      <Drawer.Screen
+        name="BottomTabsNavigator"
+        component={BottomTabsNavigator}
+      />
       <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
     </Drawer.Navigator>
   );
@@ -58,6 +64,11 @@ const DrawerContent = ({navigation}: DrawerContentComponentProps) => {
           style={styles.menuItem}
           onPress={() => navigation.navigate('StackNavigator')}>
           <Text style={styles.menuItemText}>Stack Navigation</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.menuItem}
+          onPress={() => navigation.navigate('BottomTabsNavigator')}>
+          <Text style={styles.menuItemText}>Bottom Tabs Navigator</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.menuItem}
